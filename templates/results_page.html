@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <title>MTA - Analysis</title>
+        
+        <script>
+            let url="{{data}}";
+            let array=url.split("/");
+            let urlh = array[0]+"/H_"+array[1];
+            let urll = array[0]+"/L_"+array[1];
+            
+            function removeClassActive() {
+                document.getElementById("bar").classList.remove("active");
+                document.getElementById("horizontal").classList.remove("active");
+                document.getElementById("line").classList.remove("active");
+            };
+        </script>
+    
+    </head>
+
+    <body>
+    
+        <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+            <a class="navbar-brand" href="/">MTA - Analysis</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-item nav-link active" href="#bar" id="bar" onclick="document.getElementById('myGraph').src=url;removeClassActive();document.getElementById('bar').classList.add('active');">Bar plot</a>
+                  <a class="nav-item nav-link" href="#hbar" id="horizontal" onclick="document.getElementById('myGraph').src=urlh;removeClassActive();document.getElementById('horizontal').classList.add('active');">Horizontal Bar</a>
+                  <a class="nav-item nav-link" href="#line" id="line" onclick="document.getElementById('myGraph').src=urll;removeClassActive();document.getElementById('line').classList.add('active');">Line Plot</a>
+                </div>
+             </div>
+        </nav>
+        <center><h1>Results</h1></center>
+    
+        <div class="container">
+            <center><img src={{data}} alt="my plot" width="750" id="myGraph"></center>
+                <div class="col-sm-6" style="float:left">
+                    <form action="previousMonth" method="POST">
+                        <input type="radio" name="station" id="station" value={{station}} style="diplay:none;position:fixed;opacity:0" checked>
+                        <button value={{startDate}} name="previousMonth" type="submit" class="btn btn-primary btn-lg">Previous Month</button>
+                    </form>
+                </div>
+                <div class="col-sm-6" style="float:right">
+                    <form action="nextMonth" method="POST">
+                        <input type="radio" name="station" id="station" value={{station}} style="diplay:none;position:fixed;opacity:0" checked>
+                        <button style="float:right" value={{startDate}} name="nextMonth" type="submit" class="btn btn-primary btn-lg">Next Month</button>
+                    </form>
+                </div>
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    </body>
+</html>

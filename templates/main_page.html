@@ -1,0 +1,74 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
+    <title>MTA Project - Index</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Choose a station to analyse</a>
+                </div>
+            </div>
+        </nav>
+    
+        <div class="container">
+            <h2>Find a station using the following criteria:<br></h2>
+        
+            <div class="row">
+    
+                <form action="response" method="POST" class="col-md-3">
+                    <h3>Select years</h3>
+                    <input type="radio" name="year" id="2015" value="2015" checked>2015
+                    <input type="radio" name="year" id="2016" value="2016" >2016
+                    <input type="radio" name="year" id="2017" value="2017" >2017
+                    <input type="radio" name="year" id="2018" value="2018" >2018
+                
+                    <br>
+                    <br>
+                    <h3>Select months</h3>
+                    <select name="month" class="custom-select" >
+                        <option value="1">january</option>
+                        <option value="2">february</option>
+                        <option value="3">mars</option>
+                        <option value="4">april</option>
+                        <option value="5">may</option>
+                        <option value="6">june</option>
+                        <option value="7">jully</option>
+                        <option value="8">august</option>
+                        <option value="9">september</option>
+                        <option value="10">october</option>
+                        <option value="11">november</option>
+                        <option value="12">december</option>
+                    </select>
+                    <br>
+                    <br>
+                    <h3>Select train stations</h3>        
+                    <select name="station">
+                        {% for element in data %}
+                            
+                            <option value={{ element[0] }}>{{ element[1] }}</option>
+                       
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <br>
+                    <input  class="btn btn-primary btn-lg" type="submit" value="submit">
+                </form>
+            </div>
+                
+        </div><!-- HTML and Boostrap from Flask tutorial http://blog.pythonanywhere.com/121/  -->
+    </body>
+</html>
