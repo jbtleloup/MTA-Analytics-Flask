@@ -1,37 +1,14 @@
-## Welcome to GitHub Pages
+# Welcome to MTA Analytics
 
-You can use the [editor on GitHub](https://github.com/jbtleloup/MTA-Analytics-Flask/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+The purpose of this project is to give a quick insight of the numbers of travelers using MTA train station in New York City.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Technologies used
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The project was made with the use of Python and Flask. The data comes directly from the MTA website. The graphs are generated thanks to Panda dataframes. Bootsrap is used to clean the design. 
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jbtleloup/MTA-Analytics-Flask/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+You can contact the developer directly from github.
